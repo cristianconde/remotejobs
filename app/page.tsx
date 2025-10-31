@@ -1,5 +1,6 @@
 import { getJobPosts, FEEDS } from '@/lib/jobPostsService';
 import { JobPostsList } from '@/components/JobPostsList';
+import { Footer } from '@/components/Footer';
 import { REVALIDATE_SECONDS } from '@/lib/constants';
 import { Metadata } from 'next';
 
@@ -25,8 +26,8 @@ export default async function Home() {
   });
 
   return (
-    <div className="min-h-screen bg-background py-8 px-4">
-      <main className="w-full max-w-5xl mx-auto">
+    <div className="min-h-screen bg-background py-8 px-4 flex flex-col">
+      <main className="w-full max-w-5xl mx-auto flex-1">
         <h1 className="text-4xl font-bold mb-2">
           Remote Programming Jobs
         </h1>
@@ -36,6 +37,8 @@ export default async function Home() {
 
         <JobPostsList posts={jobPosts} />
       </main>
+
+      <Footer />
     </div>
   );
 }

@@ -6,7 +6,7 @@ export type FilterType = 'all' | 'front-end' | 'back-end' | 'full-stack';
 /**
  * Checks if a job post matches any of the given keywords
  */
-export function postMatchesKeywords(post: JobPost, keywords: string[]): boolean {
+export function postMatchesKeywords(post: JobPost, keywords: readonly string[]): boolean {
   const titleLower = post.title.toLowerCase();
   const categoriesText = post.categories?.join(' ').toLowerCase() || '';
 
@@ -18,8 +18,8 @@ export function postMatchesKeywords(post: JobPost, keywords: string[]): boolean 
 /**
  * Gets the keywords for a specific filter
  */
-function getFilterKeywords(filter: FilterType): string[] {
-  const filterMap: Record<FilterType, string[]> = {
+function getFilterKeywords(filter: FilterType): readonly string[] {
+  const filterMap: Record<FilterType, readonly string[]> = {
     'all': [],
     'front-end': FILTER_KEYWORDS.frontend,
     'back-end': FILTER_KEYWORDS.backend,

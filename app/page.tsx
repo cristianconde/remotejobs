@@ -1,11 +1,10 @@
 import { getJobPosts, FEEDS } from '@/lib/jobPostsService';
 import { JobPostsList } from '@/components/JobPostsList';
 import { Footer } from '@/components/Footer';
-import { REVALIDATE_SECONDS } from '@/lib/constants';
 import { Metadata } from 'next';
 
 // Enable ISR - revalidate every 5 minutes
-export const revalidate = REVALIDATE_SECONDS;
+export const revalidate = 300;
 
 export const metadata: Metadata = {
   title: 'Remote Programming Jobs - Latest Opportunities',

@@ -9,6 +9,7 @@ export interface JobPost {
 export interface Feed {
   url: string;
   source: string;
+  type?: 'rss' | 'scraper';
 }
 
 export interface RSSItem {

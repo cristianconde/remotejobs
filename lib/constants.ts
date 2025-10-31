@@ -18,6 +18,7 @@ export const TAG_NORMALIZATIONS: Record<string, RegExp> = {
 export const FEED_SOURCES = {
   WE_WORK_REMOTELY: 'We Work Remotely',
   REMOTE_OK: 'Remote OK',
+  SILVER: 'Silver',
 } as const;
 
 // Revalidation time (5 minutes)
